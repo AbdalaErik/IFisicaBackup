@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <h2 style = "text-align: center;" class="mb-4">Subáreas</h2>
+    {% for Area in areasT %}
+      <h4>{{ Area.nome }}</h4>
+      <table class = "table">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Descrição</th>
+          </tr>
+          {% for Subarea in Area.subarea_set.all %}
+        </thead>
+        <tbody>
+          <td>{{ Subarea.nome }}</td>
+          <td>{{ Subarea.descricao }}</td>
+        </tbody>
+        {% endfor %}
+      </table>
+    {% endfor %}
+  </div>
